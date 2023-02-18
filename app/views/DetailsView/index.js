@@ -26,7 +26,6 @@ import firebaseSdk, {
   NOTIFICATION_TYPE_LIKE,
 } from '../../lib/firebaseSdk';
 import {VectorIcon} from '../../containers/VectorIcon';
-import NoActivity from './NoActivity';
 import I18n from '../../i18n';
 import {dateStringFromNowShort} from '../../utils/datetime';
 import {navigateToProfile} from '../../utils/const';

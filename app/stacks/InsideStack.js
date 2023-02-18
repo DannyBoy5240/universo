@@ -81,7 +81,11 @@ const TabStack = () => {
         component={MessageView}
         options={{headerShown: false}}
       />
-      <Tab.Screen name="Activity" component={DetailsView} />
+      <Tab.Screen
+        name="Activity"
+        component={DetailsView}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 };
