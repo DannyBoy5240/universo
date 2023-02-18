@@ -10,7 +10,6 @@ import HomeView from '../views/HomeView';
 import PostsView from '../views/HomeView/posts';
 import RecentView from '../views/HomeView/recent';
 import PopularView from '../views/HomeView/popular';
-import ProfileView from '../views/ProfileView';
 import ProfileEditView from '../views/ProfileEditView';
 import FindFriendView from '../views/FindFriendView';
 import FriendView from '../views/FriendView';
@@ -35,6 +34,7 @@ import {MainTabBar} from '../containers/MainScreen';
 import MenuStack from './MenuStack';
 
 import DetailsView from '../views/DetailsView';
+import ProfileView from '../views/ProfileView';
 
 const Tab = createBottomTabNavigator();
 const Inside = createStackNavigator();

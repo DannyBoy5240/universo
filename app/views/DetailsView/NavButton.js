@@ -21,13 +21,11 @@ const NavButton = ({name}) => {
       <LinearGradient
         colors={['rgba(246, 246, 246, 0.56)', 'rgba(250, 250, 250, 0)']}
         style={styles.btnBox}>
-        {/* <ImageBackground source={images.nav_btn_back} style={styles.btnBox}> */}
         <View>
           <Image source={images.add_back} style={styles.btnAvatarBack} />
           <Image source={images.ico_octagon} style={styles.btnAvatar} />
         </View>
         <Text style={[styles.btnText, {color: COLOR_WHITE}]}>{name}</Text>
-        {/* </ImageBackground> */}
       </LinearGradient>
     </TouchableOpacity>
   );

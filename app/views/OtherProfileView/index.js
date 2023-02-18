@@ -42,7 +42,6 @@ import {withActionSheet} from '../../containers/ActionSheet';
 import {VectorIcon} from '../../containers/VectorIcon';
 import scrollPersistTaps from '../../utils/scrollPersistTaps';
 import I18n from '../../i18n';
-import PostText from '../ProfileView/PostText';
 import {
   POST_TYPE_PHOTO,
   POST_TYPE_TEXT,
@@ -514,20 +513,7 @@ const OtherProfileView = props => {
           </View>
           {isPostTab ? (
             posts.map(p => {
-              if (p.type === POST_TYPE_TEXT)
-                return (
-                  <PostText
-                    key={p.id}
-                    item={p}
-                    onPress={() => onOpenPost(p)}
-                    onPressUser={() => {}}
-                    onPressShare={() => onSharePost(p)}
-                    onLike={isLiking => onToggleLike(p, isLiking)}
-                    isLiking={p.likes && p.likes.includes(user.userId)}
-                    onActions={onActionPost(p)}
-                    theme={theme}
-                  />
-                );
+              if (p.type === POST_TYPE_TEXT) return <></>;
             })
           ) : (
             <View

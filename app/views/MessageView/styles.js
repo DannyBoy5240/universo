@@ -1,69 +1,84 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  viewContainer: {
-    marginTop: 25,
+  searchContainer: {
+    paddingHorizontal: 37,
+    paddingBottom: 23,
   },
-  chatRoomCounter: {
+  searchBtn: {
+    width: 24,
+    height: 24,
+  },
+  searchBox: {
+    paddingHorizontal: 11,
+    paddingVertical: 3,
     flexDirection: 'row',
-    padding: 14,
+    alignItems: 'center',
   },
-  chatRoomText: {
-    fontFamily: 'Raleway',
-    fontWeight: '500',
-    fontSize: 14,
-    lineHeight: 19,
-    marginRight: 6,
-    marginTop: 17,
+  TransactionItemBox: {
+    height: 80,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 19,
   },
-  chatTextBox: {
-    width: 50,
-    borderBottomWidth: 1,
+  TransactionItemAvatarBox: {
+    width: 48,
+    height: 48,
+    borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  chatListContainer: {
-    marginTop: 8,
+  btnAvatar: {
+    width: 25,
+    height: 25,
   },
-  itemContainer: {
+  TransactionItemBoxText: {
+    fontFamily: 'Montserrat',
+    fontSize: 18,
+    marginLeft: 8,
+  },
+  TransactionItemDateText: {
+    fontFamily: 'Montserrat',
+    fontSize: 10,
+    marginLeft: 9,
+  },
+  moreBtn: {
+    paddingLeft: 21,
+    borderLeftWidth: 1,
+    height: 54,
+    justifyContent: 'center',
+  },
+  transactionText: {
+    fontFamily: 'Montserrat',
+    fontSize: 18,
+    marginBottom: 9,
+  },
+
+  tabBar: {
     flexDirection: 'row',
-    padding: 10,
-    marginVertical: 5,
+    justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
   },
-  avatarContainer: {
-    flexDirection: 'row',
-    position: 'relative',
+  tabBarContainer: {
+    width: '100%',
+    paddingVertical: 26,
   },
-  badge: {
-    bottom: 0,
-    right: 0,
-    borderWidth: 2,
-    position: 'absolute',
+  tabContainer: {
+    width: '33%',
   },
-  itemContent: {
-    flexGrow: 1,
-    flex: 1,
-    marginHorizontal: 12,
+  tabLabel: {
+    textAlign: 'center',
+    paddingVertical: 12,
   },
-  itemImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 100,
+  tabText: {
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    fontWeight: '600',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
   },
-  itemTitle: {
-    fontFamily: 'Hind Vadodara',
-    fontWeight: '500',
-    fontSize: 14,
-    lineHeight: 22,
-    marginBottom: 4,
-  },
-  itemMessage: {
-    fontFamily: 'Hind Vadodara',
-    fontWeight: '500',
-    fontSize: 14,
-    lineHeight: 22,
-    color: '#C4C4C4',
+  tabItem: {
+    borderRadius: 12,
   },
 });
