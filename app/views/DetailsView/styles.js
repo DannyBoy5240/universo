@@ -88,12 +88,20 @@ export default StyleSheet.create({
     width: 17,
     height: 15,
   },
+
+  avatarIcon: {
+    width: 90,
+    height: 90,
+  },
   rankText: {
     fontSize: 9,
     lineHeight: 17,
     marginTop: 8,
   },
-
+  balanceText: {
+    fontSize: 18,
+    lineHeight: 50,
+  },
   optionValue: {
     fontFamily: 'Montserrat',
     fontSize: 18,
@@ -118,43 +126,21 @@ export default StyleSheet.create({
     paddingBottom: 20,
     width: '100%',
     borderRadius: 29,
-    paddingHorizontal: 18,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
   headerContainer: {
     width: '100%',
     alignItems: 'center',
   },
-
-  avatarIcon: {
-    width: 112,
-    height: 112,
-  },
-  balanceText: {
-    fontSize: 18,
-    lineHeight: 50,
-  },
-  balancePriceBox: {
-    alignItems: 'center',
-    width: 170,
-    height: 33,
-    borderRadius: 13,
-    marginBottom: 20,
-    marginTop: 6,
-  },
-  balancePriceText: {
-    justifyContent: 'center',
-    fontSize: 22,
-    fontWeight: '800',
-  },
-
   btnContainer: {
+    marginTop: 24,
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'center',
   },
   btnBox: {
-    width: 100,
-    height: 127,
+    width: 150,
+    height: 125,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 29,
@@ -162,86 +148,21 @@ export default StyleSheet.create({
     paddingVertical: 10,
   },
   btnAvatar: {
-    width: 28,
-    height: 28,
+    width: 24,
+    height: 24,
+    position: 'absolute',
+    marginLeft: 18,
+    marginTop: 18,
+  },
+  btnAvatarBack: {
+    width: 49,
+    height: 51,
   },
   btnText: {
     fontFamily: 'Montserrat',
-    fontSize: 13,
-    fontWeight: '600',
-    lineHeight: 17,
+    fontSize: 14,
+    lineHeight: 14,
     marginTop: 18,
     textAlign: 'center',
-  },
-
-  recentActivityText: {
-    fontFamily: 'Montserrat',
-    fontSize: 16,
-    fontWeight: '700',
-    marginBottom: 8,
-  },
-  recentActivityBox: {
-    height: 73,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    paddingHorizontal: 22,
-  },
-  recentActivityAvatarBox: {
-    width: 39,
-    height: 39,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  recentActivityBoxText: {
-    fontFamily: 'Montserrat',
-    fontSize: 14,
-    marginLeft: 16,
-  },
-  moreActivityBtn: {
-    paddingLeft: 22,
-    paddingRight: 10,
-    borderLeftWidth: 1,
-  },
-
-  cardContainer: {
-    marginHorizontal: 28,
-    marginVertical: 20,
-    borderRadius: 29,
-  },
-  cardBox: {
-    height: 139,
-    borderRadius: 29,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardPic: {
-    width: 112,
-    height: 94,
-  },
-  cardInfo: {
-    marginLeft: 26,
-    alignItems: 'center',
-  },
-  cardInfoText: {
-    fontFamily: 'Montserrat',
-    fontSize: 16,
-    fontWeight: '700',
-    lineHeight: 22,
-    width: 129,
-  },
-  cardInfoBtn: {
-    width: 129,
-    height: 32,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 29,
-    marginTop: 13,
-  },
-  cardInfoBtnText: {
-    fontFamily: 'Montserrat',
-    fontSize: 12,
   },
 });

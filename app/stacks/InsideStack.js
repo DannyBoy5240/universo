@@ -24,7 +24,6 @@ import AboutView from '../views/AboutView';
 import SecurityView from '../views/SecurityView';
 import BlockView from '../views/BlockView';
 import OtherProfileView from '../views/OtherProfileView';
-import ActivityView from '../views/ActivityView';
 import CategoryView from '../views/CategoryView';
 import VipMembersClubView from '../views/VipMembersClubView';
 import ProductDetailView from '../views/ProductDetailView';
@@ -34,6 +33,8 @@ import PickLibraryView from '../views/PickLibraryView';
 import UpdateProfileAndBasicInfo from '../views/UpdateProfileAndBasicInfo';
 import {MainTabBar} from '../containers/MainScreen';
 import MenuStack from './MenuStack';
+
+import DetailsView from '../views/DetailsView';
 
 const Tab = createBottomTabNavigator();
 const Inside = createStackNavigator();
@@ -80,7 +81,7 @@ const TabStack = () => {
         component={MessageView}
         options={{headerShown: false}}
       />
-      <Tab.Screen name="Activity" component={ActivityView} />
+      <Tab.Screen name="Activity" component={DetailsView} />
     </Tab.Navigator>
   );
 };

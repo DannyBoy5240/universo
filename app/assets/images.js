@@ -110,6 +110,11 @@ const images = {
   add_back: require('./images/addBack.png'),
   ico_octagon: require('./images/ico_octagon.png'),
   ico_people: require('./images/ico_people.png'),
+  ico_invest: require('./images/ico_invest.png'),
+  ico_wallet: require('./images/ico_wallet.png'),
+  ico_wallet_white: require('./images/ico_wallet_white.png'),
+  ico_bag1: require('./images/ico_bag1.png'),
+  test_pic: require('./images/test_pic.png'),
 };
 
 export default images;

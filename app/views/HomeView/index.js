@@ -9,6 +9,7 @@ import {
   Dimensions,
   useWindowDimensions,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -27,7 +28,11 @@ import {withTheme} from '../../theme';
 import {COLOR_WHITE, themes} from '../../constants/colors';
 
 import BalanceDetail from './BalanceDetail';
-import NavButton from './NavButton';
+import BuyButton from './BuyButton';
+import RecentActivity from './RecentActivity';
+import CardDataItem from './CardDataItem';
+
+import LinearGradient from 'react-native-linear-gradient';
 
 const {width} = Dimensions.get('screen');
 
@@ -41,20 +46,23 @@ const HomeView = props => {
   const {loading, isUpdating, refreshing} = state;
 
   return (
-    <MainScreen navigation={navigation}>
+    <MainScreen navigation={navigation} style={{backgroundColor: '#141436'}}>
       <StatusBar />
       <MainHeader />
       {isUpdating && (
         <ActivityIndicator absolute theme={theme} size={'large'} />
       )}
 
-      <BalanceDetail />
-      <View style={styles.btnContainer}>
-        <NavButton name={'Sponsor'} />
-        <NavButton name={'Ranks'} />
-        <NavButton name={'Direct / Indirect Sales'} />
-        <NavButton name={'Statistics'} />
-      </View>
+      <ScrollView>
+        <BalanceDetail />
+        <View style={styles.btnContainer}>
+          <BuyButton name={'Buy Investment'} />
+          <BuyButton name={'Buy Blockchain'} />
+          <BuyButton name={'Buy Products'} />
+        </View>
+        <CardDataItem />
+        <RecentActivity />
+      </ScrollView>
     </MainScreen>
   );
 };

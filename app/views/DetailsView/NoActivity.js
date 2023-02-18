@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
 import images from '../../assets/images';
-import { themes } from '../../constants/colors';
+import {themes} from '../../constants/colors';
 import I18n from '../../i18n';
-import { withTheme } from '../../theme';
+import {withTheme} from '../../theme';
 const styles = StyleSheet.create({
   btnContainer: {
     alignItems: 'center',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const NoFriends = ({ onPress, theme }) => (
+const NoFriends = ({onPress, theme}) => (
   <View style={styles.btnContainer}>
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image
@@ -48,10 +48,10 @@ const NoFriends = ({ onPress, theme }) => (
         style={styles.iconStyle}
       />
     </TouchableOpacity>
-    <Text style={[styles.noActivity, { color: themes[theme].activeTintColor }]}>
+    <Text style={[styles.noActivity, {color: themes[theme].activeTintColor}]}>
       {I18n.t('no_activity')}
     </Text>
-    <Text style={[styles.titleText, { color: themes[theme].activeTintColor }]}>
+    <Text style={[styles.titleText, {color: themes[theme].activeTintColor}]}>
       {I18n.t('No_activity')}
     </Text>
   </View>

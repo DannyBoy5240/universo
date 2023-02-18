@@ -17,7 +17,6 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import {themes} from '../../constants/colors';
 import StatusBar from '../../containers/StatusBar';
 import {withTheme} from '../../theme';
-import NoFriends from './NoFriends';
 import ActivityIndicator from '../../containers/ActivityIndicator';
 import * as HeaderButton from '../../containers/HeaderButton';
 import MainScreen from '../../containers/MainScreen';
@@ -364,7 +363,7 @@ const PostView = props => {
           contentContainerStyle={{paddingBottom: 20}}
         />
       ) : (
-        <NoFriends onPress={() => {}} />
+        <></>
       )}
     </MainScreen>
   );
