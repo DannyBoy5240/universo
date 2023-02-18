@@ -192,6 +192,7 @@ export default StyleSheet.create({
     height: 39,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 50,
   },
   recentActivityBoxText: {
     fontFamily: 'Montserrat',

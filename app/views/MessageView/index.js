@@ -21,12 +21,11 @@ import {withTheme} from '../../theme';
 import images from '../../assets/images';
 import styles from './styles';
 
-import SearchTransaction from './SearchTransaction';
+import MainScreen from '../../containers/MainScreen';
 import StatusBar from '../../containers/StatusBar';
 import MainHeader from '../../containers/MainHeader';
+import SearchTransaction from './SearchTransaction';
 import TransactionItem from './TransactionItem';
-
-import MainScreen from '../../containers/MainScreen';
 
 const MessageView = props => {
   const tData = [

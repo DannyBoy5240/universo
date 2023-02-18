@@ -9,7 +9,6 @@ import SidebarView from '../views/SidebarView';
 import HomeView from '../views/HomeView';
 import PostsView from '../views/HomeView/posts';
 import RecentView from '../views/HomeView/recent';
-import PopularView from '../views/HomeView/popular';
 import ProfileEditView from '../views/ProfileEditView';
 import FindFriendView from '../views/FindFriendView';
 import FriendView from '../views/FriendView';
@@ -109,11 +108,6 @@ const InsideStack = () => {
         name="Recent"
         component={RecentView}
         options={RecentView.navigationOptions}
-      />
-      <Inside.Screen
-        name="Popular"
-        component={PopularView}
-        options={PopularView.navigationOptions}
       />
       <Inside.Screen name="ProfileEdit" component={ProfileEditView} />
       <Inside.Screen

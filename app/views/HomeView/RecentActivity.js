@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import I18n from '../../i18n';
+import LinearGradient from 'react-native-linear-gradient';
+
 import images from '../../assets/images';
-import {COLOR_WHITE, COLOR_BLACK} from '../../constants/colors';
 import styles from './styles';
+import {COLOR_WHITE, COLOR_BLACK} from '../../constants/colors';
+
 import {VectorIcon} from '../../containers/VectorIcon';
 
 const RecentActivity = ({name}) => {
@@ -16,13 +18,11 @@ const RecentActivity = ({name}) => {
       <TouchableOpacity
         style={[styles.recentActivityBox, {backgroundColor: COLOR_BLACK}]}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <View
-            style={[
-              styles.recentActivityAvatarBox,
-              {backgroundColor: '#ff0000'},
-            ]}>
+          <LinearGradient
+            colors={['#a755ff', '#6da0ee']}
+            style={styles.recentActivityAvatarBox}>
             <Image source={images.ico_wallet_white} style={styles.btnAvatar} />
-          </View>
+          </LinearGradient>
           <Text style={[styles.recentActivityBoxText, {color: COLOR_WHITE}]}>
             Hayek Earnings
           </Text>

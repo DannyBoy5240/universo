@@ -10,23 +10,34 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const AlertBox = ({data}) => {
   return (
-    <View styles={styles.alertContainer} key={'alertContaienr' + data.id}>
-      <LinearGradient colors={['#fafafa', 'rgba(246, 246, 246, 0)']}>
-        <View styles={{paddingHorizontal: 20}}>
+    <View style={styles.alertContainer} key={'alertContaienr' + data.id}>
+      <LinearGradient
+        colors={['#fafafa', 'rgba(246, 246, 246, 0)']}
+        style={{borderRadius: 12}}>
+        <View style={{paddingHorizontal: 20, paddingVertical: 7}}>
           <View
-            styles={{
+            style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <Text styles={[styles.titleText, {color: '#88fff3'}]}>
-              {data.title}
-            </Text>
+            <Text style={[styles.titleText, {color: '#88fff3'}]}>AAA</Text>
             <Image source={images.ico_close} style={styles.closeBtn} />
           </View>
-          <Text>{data.subTitle}</Text>
-          <Text>{data.text}</Text>
+          <Text style={[styles.subTitleText, {color: COLOR_WHITE}]}>
+            {data.subTitle}
+          </Text>
+          <Text style={[styles.contentText, {color: COLOR_WHITE}]}>
+            {data.text}
+          </Text>
           <TouchableOpacity>
-            <Text>View mas</Text>
+            <Text
+              style={[styles.viewMoreText, {color: COLOR_WHITE}]}
+              textDecorationLine="underline"
+              textDecorationColor={COLOR_WHITE}
+              textDecorationStyle="solid"
+              textDecorationThickness={1}>
+              View mas
+            </Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>

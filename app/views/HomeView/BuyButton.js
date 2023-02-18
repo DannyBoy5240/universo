@@ -8,15 +8,18 @@ import {
   ImageBackground,
 } from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import I18n from '../../i18n';
+import LinearGradient from 'react-native-linear-gradient';
+
 import images from '../../assets/images';
-import {COLOR_WHITE, COLOR_BLACK} from '../../constants/colors';
 import styles from './styles';
+import {COLOR_WHITE, COLOR_BLACK} from '../../constants/colors';
 
 const BuyButton = ({name}) => {
   return (
     <TouchableOpacity style={{paddingHorizontal: 8, paddingVertical: 8}}>
-      <View style={{borderRadius: 29}}>
+      <LinearGradient
+        colors={['#42e8e0', 'rgba(255, 239, 252, 0)']}
+        style={{borderRadius: 29, padding: 1}}>
         <View style={[styles.btnBox, {backgroundColor: COLOR_BLACK}]}>
           {name === 'Buy Investment' ? (
             <Image source={images.ico_invest} style={styles.btnAvatar} />
@@ -29,7 +32,7 @@ const BuyButton = ({name}) => {
           )}
           <Text style={[styles.btnText, {color: COLOR_WHITE}]}>{name}</Text>
         </View>
-      </View>
+      </LinearGradient>
     </TouchableOpacity>
   );
 };

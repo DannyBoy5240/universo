@@ -45,7 +45,6 @@ export default StyleSheet.create({
   alertContainer: {
     paddingHorizontal: 30,
     paddingVertical: 6,
-    borderRadius: 12,
     height: 118,
   },
   closeBtn: {
@@ -55,5 +54,19 @@ export default StyleSheet.create({
   titleText: {
     fontFamily: 'Montserrat',
     fontSize: 10,
+  },
+  subTitleText: {
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    fontWeight: '700',
+  },
+  contentText: {
+    fontFamily: 'Montserrat',
+    fontSize: 10,
+  },
+  viewMoreText: {
+    fontFamily: 'Montserrat',
+    fontSize: 10,
+    marginTop: 14,
   },
 });

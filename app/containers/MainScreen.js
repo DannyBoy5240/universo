@@ -162,6 +162,11 @@ const styles = StyleSheet.create({
     width: 31,
     height: 31,
   },
+  clickedSign: {
+    width: 6,
+    height: 6,
+    marginTop: 2,
+  },
 });
 
 export const MainTabBar = React.memo(({theme, navigation, state}) => {
@@ -184,6 +189,11 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
               source={state.index === 0 ? images.ico_home_cli : images.ico_home}
               style={styles.tabIcon}
             />
+            {state.index == 0 ? (
+              <Image source={images.ico_home_cli} style={styles.clickedSign} />
+            ) : (
+              <></>
+            )}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
@@ -192,6 +202,11 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
               source={state.index === 1 ? images.ico_bag : images.ico_bag}
               style={styles.tabIcon}
             />
+            {state.index == 1 ? (
+              <Image source={images.ico_home_cli} style={styles.clickedSign} />
+            ) : (
+              <></>
+            )}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
@@ -200,6 +215,11 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
               source={state.index === 2 ? images.ico_bag : images.ico_bag}
               style={styles.tabIcon}
             />
+            {state.index == 2 ? (
+              <Image source={images.ico_home_cli} style={styles.clickedSign} />
+            ) : (
+              <></>
+            )}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
@@ -208,6 +228,11 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
               source={state.index === 3 ? images.ico_data_cli : images.ico_data}
               style={styles.tabIcon}
             />
+            {state.index == 3 ? (
+              <Image source={images.ico_home_cli} style={styles.clickedSign} />
+            ) : (
+              <></>
+            )}
           </TouchableOpacity>
         </View>
       </View>

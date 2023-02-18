@@ -18,7 +18,7 @@ const BalanceDetail = ({}) => {
 
       <View style={{borderRadius: 13, alignItems: 'center'}}>
         <View style={[styles.balancePriceBox, {backgroundColor: COLOR_WHITE}]}>
-          <Text style={[styles.balancePriceText, {color: COLOR_ULTRAMARINE}]}>
+          <Text style={[styles.balancePriceText, {color: '#141436'}]}>
             $000.000
           </Text>
         </View>

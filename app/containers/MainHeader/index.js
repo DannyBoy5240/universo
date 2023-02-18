@@ -48,12 +48,14 @@ const MainHeader = ({avatarImage, onChangeText, ...otherInputProps}) => {
           size={24}
         />
       </TouchableOpacity>
-      <VectorIcon
-        type="Ionicons"
-        name="notifications"
-        color={COLOR_WHITE}
-        size={25}
-      />
+      <TouchableOpacity>
+        <VectorIcon
+          type="Ionicons"
+          name="notifications"
+          color={COLOR_WHITE}
+          size={25}
+        />
+      </TouchableOpacity>
     </View>
   );
 };

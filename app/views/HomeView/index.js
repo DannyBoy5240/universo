@@ -53,16 +53,14 @@ const HomeView = props => {
         <ActivityIndicator absolute theme={theme} size={'large'} />
       )}
 
-      <ScrollView>
-        <BalanceDetail />
-        <View style={styles.btnContainer}>
-          <BuyButton name={'Buy Investment'} />
-          <BuyButton name={'Buy Blockchain'} />
-          <BuyButton name={'Buy Products'} />
-        </View>
-        <CardDataItem />
-        <RecentActivity />
-      </ScrollView>
+      <BalanceDetail />
+      <View style={styles.btnContainer}>
+        <BuyButton name={'Buy Investment'} />
+        <BuyButton name={'Buy Blockchain'} />
+        <BuyButton name={'Buy Products'} />
+      </View>
+      <CardDataItem />
+      <RecentActivity />
     </MainScreen>
   );
 };

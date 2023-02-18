@@ -1,7 +1,5 @@
 const images = {
   nav_back: require('./images/nav_back.png'),
-  bg_splash: require('./img/splash.png'),
-  background: require('./img/background.png'),
   intro_1: require('./img/intro-1.png'),
   intro_2: require('./img/intro-2.png'),
   intro_3: require('./img/intro-3.png'),
@@ -98,6 +96,9 @@ const images = {
   chat_ico: require('./images/chat_ico.png'),
   notification_ico: require('./images/notification_ico.png'),
   eye_slash: require('./images/eye-slash.png'),
+
+  bg_splash: require('./img/splash.png'),
+  background: require('./img/background.png'),
 
   ico_bag: require('./images/ico_bag.png'),
   ico_data: require('./images/ico_data.png'),

@@ -11,20 +11,24 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 
-import {COLOR_WHITE, COLOR_BLACK, themes} from '../../constants/colors';
-import StatusBar from '../../containers/StatusBar';
+import {setUser as setUserAction} from '../../actions/login';
+import ActivityIndicator from '../../containers/ActivityIndicator';
+import scrollPersistTaps from '../../utils/scrollPersistTaps';
+import {withActionSheet} from '../../containers/ActionSheet';
+
+import {
+  COLOR_WHITE,
+  COLOR_BLACK,
+  COLOR_ULTRAMARINE,
+  COLOR_DARKBLACK,
+} from '../../constants/colors';
 import {withTheme} from '../../theme';
 import images from '../../assets/images';
 import styles from './styles';
-import {setUser as setUserAction} from '../../actions/login';
-import ActivityIndicator from '../../containers/ActivityIndicator';
-import {showErrorAlert, showToast} from '../../lib/info';
-import {VectorIcon} from '../../containers/VectorIcon';
-import scrollPersistTaps from '../../utils/scrollPersistTaps';
-import I18n from '../../i18n';
-import {withActionSheet} from '../../containers/ActionSheet';
-import MainHeader from '../../containers/MainHeader';
 
+import StatusBar from '../../containers/StatusBar';
+import MainHeader from '../../containers/MainHeader';
+import MainScreen from '../../containers/MainScreen';
 import AlertBox from './AlertBox';
 
 const ProfileView = props => {
@@ -52,10 +56,10 @@ const ProfileView = props => {
   const currentDate = 13;
 
   return (
-    <View style={{backgroundColor: '#02010c'}}>
-      <StatusBar />
-      <MainHeader />
-      <ScrollView>
+    <MainScreen style={{backgroundColor: COLOR_ULTRAMARINE}}>
+      <View style={{backgroundColor: COLOR_DARKBLACK, marginBottom: 20}}>
+        <StatusBar />
+        <MainHeader />
         <View style={styles.notificationBox}>
           <Text style={[styles.notificationText, {color: COLOR_WHITE}]}>
             Notifications
@@ -88,15 +92,15 @@ const ProfileView = props => {
             ))}
           </View>
         </View>
-        <View styles={[styles.alertBoxContainer]}>
-          <View style={[styles.alertBoxBox]}>
-            {curNoti.map(idx => (
-              <AlertBox data={idx} key={'alert_box' + idx.id} />
-            ))}
-          </View>
+      </View>
+      <View styles={[styles.alertBoxContainer]}>
+        <View style={[styles.alertBoxBox]}>
+          {curNoti.map(idx => (
+            <AlertBox data={idx} key={'alert_box' + idx.id} />
+          ))}
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </MainScreen>
   );
 };
 
