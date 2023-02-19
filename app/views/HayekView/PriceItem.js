@@ -23,25 +23,27 @@ const PriceItem = ({data}) => {
           ]}>
           <Text style={[styles.titleText, {color: '#6c727f'}]}>Issue</Text>
           <Text style={[styles.valueText, {color: COLOR_BLACK}]}>
-            {data.price}
+            {data.issue}
           </Text>
         </View>
         <View style={[styles.itemBox, {borderBottomWidth: 0.6}]}>
-          <Text style={[styles.titleText, {color: '#6c727f'}]}>Issue</Text>
+          <Text style={[styles.titleText, {color: '#6c727f'}]}>Amount</Text>
           <Text style={[styles.valueText, {color: COLOR_BLACK}]}>
-            {data.price}
+            {data.amount}
           </Text>
         </View>
         <View style={[styles.itemBox, {borderRightWidth: 0.6}]}>
-          <Text style={[styles.titleText, {color: '#6c727f'}]}>Issue</Text>
+          <Text style={[styles.titleText, {color: '#6c727f'}]}>Price</Text>
           <Text style={[styles.valueText, {color: COLOR_BLACK}]}>
             {data.price}
           </Text>
         </View>
         <View style={[styles.itemBox]}>
-          <Text style={[styles.titleText, {color: '#6c727f'}]}>Issue</Text>
+          <Text style={[styles.titleText, {color: '#6c727f'}]}>
+            Existencias
+          </Text>
           <Text style={[styles.valueText, {color: COLOR_BLACK}]}>
-            {data.price}
+            {data.existance}
           </Text>
         </View>
       </View>
