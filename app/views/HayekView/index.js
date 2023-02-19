@@ -81,7 +81,7 @@ const HayekView = props => {
         </View>
       );
     } else {
-      return <NoFriends onPress={() => {}} />;
+      return <></>;
     }
   };
 

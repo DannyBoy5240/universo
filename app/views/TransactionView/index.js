@@ -71,7 +71,7 @@ const TransactionView = props => {
         </View>
       );
     } else {
-      return <NoFriends onPress={() => {}} />;
+      return <></>;
     }
   };
 

@@ -13,7 +13,6 @@ import FindFriendView from '../views/FindFriendView';
 import FriendView from '../views/FriendView';
 import FollowView from '../views/FollowView';
 import CreatePostView from '../views/CreatePostView';
-import PostDetailView from '../views/PostDetailView';
 import ChatView from '../views/ChatView';
 import SettingView from '../views/SettingView';
 import AboutView from '../views/AboutView';
@@ -22,7 +21,7 @@ import BlockView from '../views/BlockView';
 import CategoryView from '../views/CategoryView';
 import VipMembersClubView from '../views/VipMembersClubView';
 import EditPostView from '../views/EditPostView';
-import ProductWebView from '../views/ProductWebView';
+import MyDataView from '../views/MyDataView';
 import PickLibraryView from '../views/PickLibraryView';
 import UpdateProfileAndBasicInfo from '../views/UpdateProfileAndBasicInfo';
 import {MainTabBar} from '../containers/MainScreen';
@@ -34,6 +33,7 @@ import NotificationView from '../views/NotificationView';
 import HayekView from '../views/HayekView';
 import MarketView from '../views/MarketView';
 import TransactionView from '../views/TransactionView';
+import CreatePINView from '../views/CreatePINView';
 
 const Tab = createBottomTabNavigator();
 const Inside = createStackNavigator();
@@ -114,6 +114,16 @@ const InsideStack = () => {
         component={HayekView}
         options={{headerShown: false}}
       />
+      <Inside.Screen
+        name="MyData"
+        component={MyDataView}
+        options={{headerShown: false}}
+      />
+      <Inside.Screen
+        name="CreatePIN"
+        component={CreatePINView}
+        options={{headerShown: false}}
+      />
 
       <Inside.Screen
         name="Recent"
@@ -134,17 +144,11 @@ const InsideStack = () => {
       <Inside.Screen name="Follow" component={FollowView} />
       <Inside.Screen name="CreatePost" component={CreatePostView} />
       <Inside.Screen name="EditPost" component={EditPostView} />
-      <Inside.Screen
-        name="PostDetail"
-        component={PostDetailView}
-        options={{headerShown: false}}
-      />
       <Inside.Screen name="Chat" component={ChatView} />
       <Inside.Screen name="Setting" component={SettingView} />
       {/*<Inside.Screen name="About" component={AboutView} />*/}
       <Inside.Screen name="Security" component={SecurityView} />
       {/*<Inside.Screen name="Block" component={BlockView} />*/}
-      <Inside.Screen name="ProductWeb" component={ProductWebView} />
       <Inside.Screen
         name="Category"
         component={CategoryView}

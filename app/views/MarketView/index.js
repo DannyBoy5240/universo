@@ -80,7 +80,7 @@ const MarketView = props => {
         </View>
       );
     } else {
-      return <NoFriends onPress={() => {}} />;
+      return <></>;
     }
   };
 
