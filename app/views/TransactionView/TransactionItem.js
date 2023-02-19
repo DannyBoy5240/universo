@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
+import {useNavigation} from '@react-navigation/native';
+
 import images from '../../assets/images';
 import styles from './styles';
 import {COLOR_WHITE, COLOR_BLACK} from '../../constants/colors';
@@ -9,10 +11,13 @@ import {VectorIcon} from '../../containers/VectorIcon';
 import LinearGradient from 'react-native-linear-gradient';
 
 const TransactionItem = ({data}) => {
+  const navigation = useNavigation();
+
   return (
     <View style={{paddingHorizontal: 28, paddingVertical: 9}}>
       <TouchableOpacity
-        style={[styles.TransactionItemBox, {backgroundColor: COLOR_BLACK}]}>
+        style={[styles.TransactionItemBox, {backgroundColor: COLOR_BLACK}]}
+        onPress={() => navigation.push('Hayek')}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View>
             <LinearGradient

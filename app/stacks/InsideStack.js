@@ -6,7 +6,6 @@ import {outsideHeader, themedHeader, StackAnimation} from '../utils/navigation';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SidebarView from '../views/SidebarView';
-import HomeView from '../views/HomeView';
 import PostsView from '../views/HomeView/posts';
 import RecentView from '../views/HomeView/recent';
 import ProfileEditView from '../views/ProfileEditView';
@@ -15,7 +14,6 @@ import FriendView from '../views/FriendView';
 import FollowView from '../views/FollowView';
 import CreatePostView from '../views/CreatePostView';
 import PostDetailView from '../views/PostDetailView';
-import TransactionView from '../views/TransactionView';
 import ChatView from '../views/ChatView';
 import SettingView from '../views/SettingView';
 import AboutView from '../views/AboutView';
@@ -23,7 +21,6 @@ import SecurityView from '../views/SecurityView';
 import BlockView from '../views/BlockView';
 import CategoryView from '../views/CategoryView';
 import VipMembersClubView from '../views/VipMembersClubView';
-import ProductDetailView from '../views/ProductDetailView';
 import EditPostView from '../views/EditPostView';
 import ProductWebView from '../views/ProductWebView';
 import PickLibraryView from '../views/PickLibraryView';
@@ -31,9 +28,12 @@ import UpdateProfileAndBasicInfo from '../views/UpdateProfileAndBasicInfo';
 import {MainTabBar} from '../containers/MainScreen';
 import MenuStack from './MenuStack';
 
+import HomeView from '../views/HomeView';
 import DetailsView from '../views/DetailsView';
 import NotificationView from '../views/NotificationView';
+import HayekView from '../views/HayekView';
 import MarketView from '../views/MarketView';
+import TransactionView from '../views/TransactionView';
 
 const Tab = createBottomTabNavigator();
 const Inside = createStackNavigator();
@@ -105,6 +105,17 @@ const InsideStack = () => {
         options={{headerShown: false}}
       />
       <Inside.Screen
+        name="Notification"
+        component={NotificationView}
+        options={{headerShown: false}}
+      />
+      <Inside.Screen
+        name="Hayek"
+        component={HayekView}
+        options={{headerShown: false}}
+      />
+
+      <Inside.Screen
         name="Recent"
         component={RecentView}
         options={RecentView.navigationOptions}
@@ -118,11 +129,6 @@ const InsideStack = () => {
       <Inside.Screen
         name="FindFriend"
         component={FindFriendView}
-        options={{headerShown: false}}
-      />
-      <Inside.Screen
-        name="Notification"
-        component={NotificationView}
         options={{headerShown: false}}
       />
       <Inside.Screen name="Follow" component={FollowView} />
@@ -149,7 +155,6 @@ const InsideStack = () => {
         component={VipMembersClubView}
         options={VipMembersClubView.navigationOptions}
       />
-      <Inside.Screen name="ProductDetail" component={ProductDetailView} />
       <Inside.Screen name="PickLibrary" component={PickLibraryView} />
       <Inside.Screen
         name="UpdateProfileAndBasicInfo"
