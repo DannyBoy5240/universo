@@ -48,7 +48,7 @@ const MainHeader = ({avatarImage, onChangeText, ...otherInputProps}) => {
           size={24}
         />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
         <VectorIcon
           type="Ionicons"
           name="notifications"

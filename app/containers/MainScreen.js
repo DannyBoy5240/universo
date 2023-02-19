@@ -197,7 +197,7 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
-            onPress={() => navigation.navigate('Profile')}>
+            onPress={() => navigation.navigate('Market')}>
             <Image
               source={state.index === 1 ? images.ico_bag : images.ico_bag}
               style={styles.tabIcon}
@@ -210,7 +210,7 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
-            onPress={() => navigation.navigate('Message')}>
+            onPress={() => navigation.navigate('Transaction')}>
             <Image
               source={state.index === 2 ? images.ico_bag : images.ico_bag}
               style={styles.tabIcon}
@@ -223,7 +223,7 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.tabContainer}
-            onPress={() => navigation.navigate('Activity')}>
+            onPress={() => navigation.navigate('Details')}>
             <Image
               source={state.index === 3 ? images.ico_data_cli : images.ico_data}
               style={styles.tabIcon}

@@ -27,7 +27,7 @@ import MainHeader from '../../containers/MainHeader';
 import SearchTransaction from './SearchTransaction';
 import TransactionItem from './TransactionItem';
 
-const MessageView = props => {
+const TransactionView = props => {
   const tData = [
     {
       id: 1,
@@ -145,4 +145,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(withTheme(MessageView));
+)(withTheme(TransactionView));

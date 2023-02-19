@@ -31,7 +31,7 @@ import MainHeader from '../../containers/MainHeader';
 import MainScreen from '../../containers/MainScreen';
 import AlertBox from './AlertBox';
 
-const ProfileView = props => {
+const NotificationView = props => {
   const curDate = [12, 13, 14, 15, 16, 17];
   const curNoti = [
     {
@@ -115,4 +115,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(withActionSheet(withTheme(ProfileView)));
+)(withActionSheet(withTheme(NotificationView)));

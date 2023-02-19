@@ -15,13 +15,12 @@ import FriendView from '../views/FriendView';
 import FollowView from '../views/FollowView';
 import CreatePostView from '../views/CreatePostView';
 import PostDetailView from '../views/PostDetailView';
-import MessageView from '../views/MessageView';
+import TransactionView from '../views/TransactionView';
 import ChatView from '../views/ChatView';
 import SettingView from '../views/SettingView';
 import AboutView from '../views/AboutView';
 import SecurityView from '../views/SecurityView';
 import BlockView from '../views/BlockView';
-import OtherProfileView from '../views/OtherProfileView';
 import CategoryView from '../views/CategoryView';
 import VipMembersClubView from '../views/VipMembersClubView';
 import ProductDetailView from '../views/ProductDetailView';
@@ -33,7 +32,8 @@ import {MainTabBar} from '../containers/MainScreen';
 import MenuStack from './MenuStack';
 
 import DetailsView from '../views/DetailsView';
-import ProfileView from '../views/ProfileView';
+import NotificationView from '../views/NotificationView';
+import MarketView from '../views/MarketView';
 
 const Tab = createBottomTabNavigator();
 const Inside = createStackNavigator();
@@ -71,17 +71,17 @@ const TabStack = () => {
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileView}
+        name="Market"
+        component={MarketView}
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="Message"
-        component={MessageView}
+        name="Transaction"
+        component={TransactionView}
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="Activity"
+        name="Details"
         component={DetailsView}
         options={{headerShown: false}}
       />
@@ -121,8 +121,8 @@ const InsideStack = () => {
         options={{headerShown: false}}
       />
       <Inside.Screen
-        name="OtherProfile"
-        component={OtherProfileView}
+        name="Notification"
+        component={NotificationView}
         options={{headerShown: false}}
       />
       <Inside.Screen name="Follow" component={FollowView} />
