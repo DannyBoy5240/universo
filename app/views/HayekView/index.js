@@ -36,9 +36,11 @@ import MainHeader from '../../containers/MainHeader';
 import MainScreen from '../../containers/MainScreen';
 import PriceItem from './PriceItem';
 
-const HayekView = props => {
+const HayekView = ({subProp}) => {
   const searchInput = useRef(null);
   const [searchText, setSearchText] = useState('');
+
+  console.log('HayekView started -->', subProp);
 
   const tData = [
     {
@@ -108,7 +110,9 @@ const HayekView = props => {
                 style={{width: '50%', paddingHorizontal: 4}}>
                 {i == index ? (
                   <LinearGradient
-                    colors={['#a755ff', '#6da0ee']}
+                    colors={['#6da0ee', '#a755ff']}
+                    start={{x: 0, y: 0.5}}
+                    end={{x: 1, y: 0.5}}
                     style={styles.tabItem}>
                     <Text style={[styles.tabText, {color: COLOR_WHITE}]}>
                       {route.title}
@@ -135,42 +139,47 @@ const HayekView = props => {
       <StatusBar />
       <MainHeader />
       <View style={styles.summaryBoxContainer}>
-        <LinearGradient
-          colors={['rgba(132, 44, 191, 0.35)', '#f2e9f9']}
-          style={styles.summaryBox}>
-          <View style={styles.summaryBoxMain}>
-            <View
-              style={[styles.summaryIconBox, {backgroundColor: COLOR_WHITE}]}>
-              <Image source={images.test_pic} style={styles.summaryIcon} />
+        <View
+          style={{
+            backgroundColor: 'rgba(96, 40, 207, 0.5)',
+            borderRadius: 29,
+          }}>
+          <LinearGradient
+            colors={['rgba(132, 44, 191, 0.35)', '#f2e9f9']}
+            start={{x: 1, y: 1}}
+            end={{x: 0, y: 0}}
+            style={styles.summaryBox}>
+            <View style={styles.summaryBoxMain}>
+              <View
+                style={[styles.summaryIconBox, {backgroundColor: COLOR_WHITE}]}>
+                <Image source={images.test_pic} style={styles.summaryIcon} />
+              </View>
+              <View style={{marginLeft: 10}}>
+                <Text
+                  style={[
+                    styles.summaryTitle,
+                    {
+                      color: COLOR_WHITE,
+                      borderBottomWidth: 1,
+                      borderBottomColor: COLOR_WHITE,
+                    },
+                  ]}>
+                  Hayek
+                </Text>
+                <Text
+                  style={[
+                    styles.summaryTokenDescription,
+                    {color: COLOR_WHITE},
+                  ]}>
+                  Remaining Tokens
+                </Text>
+                <Text style={[styles.summaryTokenPrice, {color: COLOR_WHITE}]}>
+                  $87,430.12
+                </Text>
+              </View>
             </View>
-            <View style={{marginLeft: 10}}>
-              <Text
-                style={[
-                  styles.summaryTitle,
-                  {
-                    color: COLOR_WHITE,
-                    borderBottomWidth: 1,
-                    borderBottomColor: COLOR_WHITE,
-                  },
-                ]}>
-                Hayek
-              </Text>
-              <Text
-                style={[styles.summaryTokenDescription, {color: COLOR_WHITE}]}>
-                Remaining Tokens
-              </Text>
-              <Text style={[styles.summaryTokenPrice, {color: COLOR_WHITE}]}>
-                $87,430.12
-              </Text>
-            </View>
-          </View>
-          <VectorIcon
-            type="Ionicons"
-            name="add"
-            color={COLOR_WHITE}
-            size={17}
-          />
-        </LinearGradient>
+          </LinearGradient>
+        </View>
       </View>
       <TabView
         navigationState={{index, routes}}

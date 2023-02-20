@@ -11,11 +11,11 @@ import LinearGradient from 'react-native-linear-gradient';
 const PriceItem = ({data}) => {
   return (
     <View style={styles.priceContainer}>
-      <View
-        style={[
-          styles.priceBox,
-          {backgroundColor: COLOR_WHITE, opacity: 0.95},
-        ]}>
+      <LinearGradient
+        colors={['#ffffff', 'rgba(255, 252, 252, 0.88)']}
+        start={{x: 0, y: 0.5}}
+        end={{x: 1, y: 0.5}}
+        style={styles.priceBox}>
         <View
           style={[
             styles.itemBox,
@@ -46,7 +46,7 @@ const PriceItem = ({data}) => {
             {data.existance}
           </Text>
         </View>
-      </View>
+      </LinearGradient>
     </View>
   );
 };

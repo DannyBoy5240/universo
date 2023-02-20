@@ -48,7 +48,7 @@ const MyDataView = props => {
       <StatusBar />
       <MainHeader />
       <SearchData />
-      <View style={{backgroundColor: COLOR_ULTRAMARINE}}>
+      <View style={{flexGrow: 1, backgroundColor: COLOR_ULTRAMARINE}}>
         {tData.map(idx => (
           <DataItem data={idx} key={'dat' + idx.id} />
         ))}

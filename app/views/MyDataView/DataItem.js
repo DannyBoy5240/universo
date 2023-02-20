@@ -13,11 +13,15 @@ import LinearGradient from 'react-native-linear-gradient';
 const DataItem = ({data}) => {
   const navigation = useNavigation();
 
+  const gotoPages = title => {
+    if (title === 'Edit PIN') navigation.navigate('CreatePIN');
+  };
+
   return (
     <View style={{paddingHorizontal: 28, paddingVertical: 9}}>
       <TouchableOpacity
         style={[styles.DataItemBox, {backgroundColor: COLOR_BLACK}]}
-        onPress={() => navigation.push('Hayek')}>
+        onPress={() => gotoPages(data.title)}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View>
             <LinearGradient
@@ -47,7 +51,7 @@ const DataItem = ({data}) => {
           <VectorIcon
             type="AntDesign"
             name="caretright"
-            size={18}
+            size={14}
             color={COLOR_WHITE}
           />
         </View>

@@ -93,11 +93,6 @@ const TabStack = () => {
         component={MyDataView}
         options={{headerShown: false}}
       />
-      <Tab.Screen
-        name="CreatePIN"
-        component={CreatePINView}
-        options={{headerShown: false}}
-      />
     </Tab.Navigator>
   );
 };
@@ -115,6 +110,11 @@ const InsideStack = () => {
       <Inside.Screen
         name="Home"
         component={TabStack}
+        options={{headerShown: false}}
+      />
+      <Inside.Screen
+        name="CreatePIN"
+        component={CreatePINView}
         options={{headerShown: false}}
       />
 

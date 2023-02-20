@@ -199,7 +199,7 @@ export const MainTabBar = React.memo(({theme, navigation, state}) => {
             style={styles.tabContainer}
             onPress={() => navigation.navigate('Market')}>
             <Image
-              source={state.index === 1 ? images.ico_bag : images.ico_bag}
+              source={state.index === 1 ? images.ico_bag_cli : images.ico_bag}
               style={styles.tabIcon}
             />
             {state.index == 1 ? (

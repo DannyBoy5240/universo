@@ -18,7 +18,7 @@ const SearchData = ({}) => {
       <View>
         <LinearGradient
           colors={['#8d8be5', '#3c3ca0']}
-          style={{borderRadius: 12}}>
+          style={{borderRadius: 12, opacity: 0.3}}>
           <View style={styles.searchBox}>
             <Image source={images.ico_search} style={styles.searchBtn} />
             <TextInput

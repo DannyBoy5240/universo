@@ -101,6 +101,7 @@ const images = {
   background: require('./img/background.png'),
 
   ico_bag: require('./images/ico_bag.png'),
+  ico_bag_cli: require('./images/ico_bag_cli.png'),
   ico_data: require('./images/ico_data.png'),
   ico_data_cli: require('./images/ico_data_cli.png'),
   ico_home: require('./images/ico_home.png'),

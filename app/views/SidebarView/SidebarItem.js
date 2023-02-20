@@ -11,13 +11,29 @@ const Item = React.memo(
   ({id, left, text, onPress, textStyle, theme, hasRight}) => {
     const navigation = useNavigation();
 
+    const gotoPage = name => {
+      if (name === 'Hayek') navigation.navigate('Hayek');
+      if (name === 'My data') navigation.navigate('MyData');
+    };
+
+    const gotoSubPage = (item, subName) => {
+      if (item.name === 'Hayek') {
+        if (subName === 'Emissions')
+          navigation.navigate('Hayek', {subProp: subName});
+        if (subName === 'Distribution')
+          navigation.navigate('Hayek', {subProp: subName});
+      }
+      if (item.name === 'My data') {
+        navigation.navigate('MyData');
+      }
+    };
+
     return (
       <View style={styles.subItemContainer}>
         <TouchableOpacity
           key={id}
           style={styles.subItemBox}
-          // onPress={() => setShow(!show)}
-        >
+          onPress={() => gotoPage(text.name)}>
           <View style={styles.item}>
             {left && <View style={styles.itemLeft}>{left}</View>}
             <View style={styles.itemCenter}>
@@ -40,7 +56,8 @@ const Item = React.memo(
           <View style={{paddingHorizontal: 10}}>
             {text.subItems?.map(idx => (
               <TouchableOpacity
-                style={{flexDirection: 'row', paddingVertical: 8}}>
+                style={{flexDirection: 'row', paddingVertical: 8}}
+                onPress={() => gotoSubPage(text, idx)}>
                 <VectorIcon
                   type={'Entypo'}
                   name={'dot-single'}

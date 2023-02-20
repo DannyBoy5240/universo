@@ -16,15 +16,15 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   DataItemBox: {
-    height: 80,
+    height: 57,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 19,
   },
   DataItemAvatarBox: {
-    width: 48,
-    height: 48,
+    width: 39,
+    height: 39,
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -35,7 +35,7 @@ export default StyleSheet.create({
   },
   DataItemBoxText: {
     fontFamily: 'Montserrat',
-    fontSize: 16,
+    fontSize: 14,
     marginLeft: 10,
   },
   DataItemDateText: {
@@ -46,7 +46,7 @@ export default StyleSheet.create({
   moreBtn: {
     paddingLeft: 21,
     borderLeftWidth: 1,
-    height: 54,
+    height: 30,
     justifyContent: 'center',
   },
   transactionText: {
