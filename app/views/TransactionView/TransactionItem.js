@@ -17,7 +17,8 @@ const TransactionItem = ({data}) => {
     <View style={{paddingHorizontal: 28, marginBottom: 9}}>
       <TouchableOpacity
         style={[styles.TransactionItemBox, {backgroundColor: COLOR_BLACK}]}
-        onPress={() => navigation.push('Hayek')}>
+        // onPress={() => navigation.push('Hayek')}
+      >
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View>
             <LinearGradient

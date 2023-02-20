@@ -34,7 +34,9 @@ const AlertBox = ({data}) => {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                 }}>
-                <Text style={[styles.titleText, {color: '#88fff3'}]}>AAA</Text>
+                <Text style={[styles.titleText, {color: '#88fff3'}]}>
+                  {data.title}
+                </Text>
                 <TouchableOpacity>
                   <Image source={images.ico_close} style={styles.closeBtn} />
                 </TouchableOpacity>

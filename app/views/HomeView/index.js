@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import StatusBar from '../../containers/StatusBar';
 import ActivityIndicator from '../../containers/ActivityIndicator';
@@ -45,16 +46,18 @@ const HomeView = props => {
     isUpdating: false,
   });
   const {loading, isUpdating, refreshing} = state;
+  const tabBarHeight = useBottomTabBarHeight();
 
   return (
-    <MainScreen navigation={navigation} style={{backgroundColor: '#141436'}}>
-      <ScrollView style={{flexGrow: 1}} {...scrollPersistTaps}>
-        <StatusBar />
-        <MainHeader />
-        {isUpdating && (
-          <ActivityIndicator absolute theme={theme} size={'large'} />
-        )}
-
+    <MainScreen
+      navigation={navigation}
+      style={{backgroundColor: '#141436', paddingBottom: tabBarHeight}}>
+      <StatusBar />
+      <MainHeader />
+      {isUpdating && (
+        <ActivityIndicator absolute theme={theme} size={'large'} />
+      )}
+      <ScrollView style={{flexGrow: 1}}>
         <BalanceDetail />
         <View style={styles.btnContainer}>
           <BuyButton name={'Buy Investment'} />

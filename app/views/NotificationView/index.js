@@ -10,6 +10,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import {connect} from 'react-redux';
+import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import {setUser as setUserAction} from '../../actions/login';
 import ActivityIndicator from '../../containers/ActivityIndicator';
@@ -48,15 +49,24 @@ const NotificationView = props => {
     },
     {
       id: 3,
-      title: 'T3 FEB',
+      title: 'T5 FEB',
+      subTitle: 'Lorem Ipsum dolor sit',
+      text: 'Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit ipsum dolor sit amet, conse ctetuer adipiscing’',
+    },
+    {
+      id: 4,
+      title: 'T6 FEB',
       subTitle: 'Lorem Ipsum dolor sit',
       text: 'Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit ipsum dolor sit amet, conse ctetuer adipiscing’',
     },
   ];
   const currentDate = 13;
 
+  const tabBarHeight = useBottomTabBarHeight();
+
   return (
-    <MainScreen style={{backgroundColor: COLOR_ULTRAMARINE}}>
+    <MainScreen
+      style={{backgroundColor: COLOR_ULTRAMARINE, paddingBottom: tabBarHeight}}>
       <View style={{backgroundColor: COLOR_DARKBLACK, marginBottom: 20}}>
         <StatusBar />
         <MainHeader />
@@ -93,13 +103,13 @@ const NotificationView = props => {
           </View>
         </View>
       </View>
-      <View styles={[styles.alertBoxContainer]}>
-        <View style={[styles.alertBoxBox]}>
-          {curNoti.map(idx => (
-            <AlertBox data={idx} key={'alert_box' + idx.id} />
-          ))}
-        </View>
-      </View>
+      {/* <View styles={[styles.alertBoxContainer]}> */}
+      <ScrollView>
+        {curNoti.map(idx => (
+          <AlertBox data={idx} key={'alert_box' + idx.id} />
+        ))}
+      </ScrollView>
+      {/* </View> */}
     </MainScreen>
   );
 };

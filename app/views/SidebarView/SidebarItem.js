@@ -14,6 +14,7 @@ const Item = React.memo(
     const gotoPage = name => {
       if (name === 'Hayek') navigation.navigate('Hayek');
       if (name === 'My data') navigation.navigate('MyData');
+      if (name === 'Transactions') navigation.navigate('Transaction');
     };
 
     const gotoSubPage = (item, subName) => {

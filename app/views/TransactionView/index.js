@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ScrollView,
   useWindowDimensions,
 } from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
@@ -61,14 +62,16 @@ const TransactionView = props => {
     },
   ];
 
+  const tabBarHeight = useBottomTabBarHeight();
+
   const RenderFlatListItem = ({data, type}) => {
     if (data.length > 0) {
       return (
-        <View>
+        <ScrollView>
           {data.map(idx => (
             <TransactionItem data={idx} key={'ti' + idx.id} />
           ))}
-        </View>
+        </ScrollView>
       );
     } else {
       return <></>;
@@ -131,7 +134,10 @@ const TransactionView = props => {
         renderTabBar={renderTabBar}
         initialLayout={{width: layout.width}}
         onIndexChange={setIndex}
-        style={{backgroundColor: COLOR_ULTRAMARINE}}
+        style={{
+          backgroundColor: COLOR_ULTRAMARINE,
+          paddingBottom: tabBarHeight,
+        }}
       />
     </MainScreen>
   );

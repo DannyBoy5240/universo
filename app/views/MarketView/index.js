@@ -14,6 +14,7 @@ import {
 import {connect} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import {TabView, SceneMap} from 'react-native-tab-view';
+import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import {setUser as setUserAction} from '../../actions/login';
 import ActivityIndicator from '../../containers/ActivityIndicator';
@@ -38,6 +39,7 @@ import ProductItem from './ProductItem';
 const MarketView = props => {
   const searchInput = useRef(null);
   const [searchText, setSearchText] = useState('');
+  const tabBarHeight = useBottomTabBarHeight();
 
   const tData = [
     {
@@ -73,11 +75,11 @@ const MarketView = props => {
   const RenderFlatListItem = ({data, type}) => {
     if (data.length > 0) {
       return (
-        <View>
+        <ScrollView>
           {data.map(idx => (
             <ProductItem data={idx} key={'ti' + idx.id} />
           ))}
-        </View>
+        </ScrollView>
       );
     } else {
       return <></>;
@@ -141,8 +143,6 @@ const MarketView = props => {
         </Text>
         <LinearGradient
           colors={['#8d8be5', '#3c3ca0']}
-          // start={{x: 0, y: 0.5}}
-          // end={{x: 1, y: 0.5}}
           style={{borderRadius: 12, opacity: 0.3}}>
           <View style={[styles.searchBox]}>
             <Image source={images.ico_search} style={styles.searchBtn} />
@@ -167,7 +167,10 @@ const MarketView = props => {
         renderTabBar={renderTabBar}
         initialLayout={{width: layout.width}}
         onIndexChange={setIndex}
-        style={{backgroundColor: COLOR_ULTRAMARINE}}
+        style={{
+          backgroundColor: COLOR_ULTRAMARINE,
+          paddingBottom: tabBarHeight,
+        }}
       />
     </MainScreen>
   );

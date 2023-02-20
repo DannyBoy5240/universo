@@ -14,6 +14,7 @@ import {
 import {connect} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import {TabView, SceneMap} from 'react-native-tab-view';
+import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import {setUser as setUserAction} from '../../actions/login';
 import ActivityIndicator from '../../containers/ActivityIndicator';
@@ -39,6 +40,8 @@ import PriceItem from './PriceItem';
 const HayekView = ({subProp}) => {
   const searchInput = useRef(null);
   const [searchText, setSearchText] = useState('');
+
+  const tabBarHeight = useBottomTabBarHeight();
 
   console.log('HayekView started -->', subProp);
 
@@ -76,11 +79,11 @@ const HayekView = ({subProp}) => {
   const RenderFlatListItem = ({data, type}) => {
     if (data.length > 0) {
       return (
-        <View>
+        <ScrollView>
           {data.map(idx => (
             <PriceItem data={idx} key={'ti' + idx.id} />
           ))}
-        </View>
+        </ScrollView>
       );
     } else {
       return <></>;
@@ -187,7 +190,10 @@ const HayekView = ({subProp}) => {
         renderTabBar={renderTabBar}
         initialLayout={{width: layout.width}}
         onIndexChange={setIndex}
-        style={{backgroundColor: COLOR_ULTRAMARINE}}
+        style={{
+          backgroundColor: COLOR_ULTRAMARINE,
+          paddingBottom: tabBarHeight,
+        }}
       />
     </MainScreen>
   );
