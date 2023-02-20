@@ -7,13 +7,15 @@ export default StyleSheet.create({
   profileContainer: {
     height: isIOS ? 140 : 100,
   },
-  container: {
+  subItemContainer: {
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+  },
+  subItemBox: {
     flex: 1,
     flexDirection: 'row',
     marginVertical: 4,
     borderRadius: 6,
-    paddingVertical: 12,
-    paddingHorizontal: 8,
   },
   profileInnerContainer: {
     flexDirection: 'row',
@@ -25,8 +27,9 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 20,
-    paddingHorizontal: 10,
+    marginHorizontal: 30,
     paddingBottom: 30,
+    borderBottomWidth: 0.3,
   },
   logo: {
     width: 220,
@@ -72,10 +75,15 @@ export default StyleSheet.create({
     marginHorizontal: 10,
   },
   itemText: {
-    fontFamily: 'Hind Vadodara',
+    fontFamily: 'Montserrat',
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 20,
+  },
+  itemSubText: {
+    fontFamily: 'Montserrat',
+    fontSize: 13,
+    lineHeight: 17,
   },
   itemsRight: {
     flex: 1,
@@ -113,14 +121,14 @@ export default StyleSheet.create({
     alignSelf: 'flex-start',
     position: 'absolute',
     top: 10,
-    right: 20,
-  },
-  closeIcon: {
-    marginRight: 8,
+    right: 0,
+    width: 24,
+    height: 24,
   },
   menuText: {
-    fontFamily: 'Raleway',
+    fontFamily: 'Montserrat',
     fontSize: 16,
+    fontWeight: '700',
     lineHeight: 26,
     marginTop: 16,
   },

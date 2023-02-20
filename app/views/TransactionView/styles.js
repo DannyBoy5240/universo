@@ -37,6 +37,7 @@ export default StyleSheet.create({
     fontFamily: 'Montserrat',
     fontSize: 18,
     marginLeft: 8,
+    marginBottom: 4,
   },
   TransactionItemDateText: {
     fontFamily: 'Montserrat',

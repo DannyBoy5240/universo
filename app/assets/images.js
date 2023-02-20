@@ -116,6 +116,7 @@ const images = {
   ico_wallet_white: require('./images/ico_wallet_white.png'),
   ico_bag1: require('./images/ico_bag1.png'),
   test_pic: require('./images/test_pic.png'),
+  test_product: require('./images/test_product.png'),
   ico_close: require('./images/ico_close.png'),
   ico_search: require('./images/ico_search.png'),
 };

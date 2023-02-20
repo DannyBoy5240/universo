@@ -24,8 +24,9 @@ import styles from './styles';
 import images from '../../assets/images';
 
 import {withActionSheet} from '../../containers/ActionSheet';
+import scrollPersistTaps from '../../utils/scrollPersistTaps';
 import {withTheme} from '../../theme';
-import {COLOR_WHITE, themes} from '../../constants/colors';
+import {COLOR_WHITE} from '../../constants/colors';
 
 import BalanceDetail from './BalanceDetail';
 import BuyButton from './BuyButton';
@@ -47,20 +48,22 @@ const HomeView = props => {
 
   return (
     <MainScreen navigation={navigation} style={{backgroundColor: '#141436'}}>
-      <StatusBar />
-      <MainHeader />
-      {isUpdating && (
-        <ActivityIndicator absolute theme={theme} size={'large'} />
-      )}
+      <ScrollView style={{flexGrow: 1}} {...scrollPersistTaps}>
+        <StatusBar />
+        <MainHeader />
+        {isUpdating && (
+          <ActivityIndicator absolute theme={theme} size={'large'} />
+        )}
 
-      <BalanceDetail />
-      <View style={styles.btnContainer}>
-        <BuyButton name={'Buy Investment'} />
-        <BuyButton name={'Buy Blockchain'} />
-        <BuyButton name={'Buy Products'} />
-      </View>
-      <CardDataItem />
-      <RecentActivity />
+        <BalanceDetail />
+        <View style={styles.btnContainer}>
+          <BuyButton name={'Buy Investment'} />
+          <BuyButton name={'Buy Blockchain'} />
+          <BuyButton name={'Buy Products'} />
+        </View>
+        <CardDataItem />
+        <RecentActivity />
+      </ScrollView>
     </MainScreen>
   );
 };

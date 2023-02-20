@@ -108,7 +108,9 @@ const MarketView = props => {
               <TouchableOpacity key={i} onPress={() => setIndex(i)}>
                 {i == index ? (
                   <LinearGradient
-                    colors={['#a755ff', '#6da0ee']}
+                    colors={['#6da0ee', '#a755ff']}
+                    start={{x: 0, y: 0.5}}
+                    end={{x: 1, y: 0.5}}
                     style={styles.tabItem}>
                     <Text style={[styles.tabText, {color: COLOR_WHITE}]}>
                       {route.title}
@@ -139,8 +141,10 @@ const MarketView = props => {
         </Text>
         <LinearGradient
           colors={['#8d8be5', '#3c3ca0']}
-          style={{borderRadius: 12}}>
-          <View style={styles.searchBox}>
+          // start={{x: 0, y: 0.5}}
+          // end={{x: 1, y: 0.5}}
+          style={{borderRadius: 12, opacity: 0.3}}>
+          <View style={[styles.searchBox]}>
             <Image source={images.ico_search} style={styles.searchBtn} />
             <TextInput
               inputRef={searchInput}

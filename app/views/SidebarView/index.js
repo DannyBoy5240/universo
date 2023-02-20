@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   ScrollView,
@@ -64,135 +64,86 @@ const SidebarView = props => {
       routes: [''],
     },
   ];
+  const [show, setShow] = useState(0);
 
-  useEffect(() => {
-    navigation.setOptions({
-      title: 'VIP Billionaires',
-      headerBackground: () => <GradientHeader />,
-    });
-  }, []);
-
-  const onClick = item => {
-    switch (item.id) {
-      // case 'terms_of_use':
-      //   return onNavigate('About', { type: 0 })
-      case 'privacy_and_settings':
-        return onNavigate('MenuStack');
-      // case 'eula':
-      //   return onNavigate('About', { type: 2 })
-      case 'shop':
-        return Linking.openURL(SITE_SHOP_URL);
-      case 'help_and_support':
-        return onNavigate('HelpAndSupport');
-      case 'MyConnections':
-        return onNavigate('MyConnections');
-      case 'vip_members':
-        return onNavigate('');
-      default:
-        onNavigate(item.route, {type: item.init});
-    }
-  };
-
-  const onNavigate = (routeName, params) => {
-    const {navigation} = props;
-    navigation.navigate(routeName, params);
-  };
-
-  const onLogOut = () => {
-    const {logout} = props;
-    showConfirmationAlert({
-      title: I18n.t('Logout'),
-      message: I18n.t('are_you_sure_to_log_out'),
-      callToAction: I18n.t('Confirm'),
-      onPress: () => {
-        if (global.unSubscribeRoom) {
-          global.unSubscribeRoom();
-          global.unSubscribeRoom = undefined;
-        }
-        logout();
-      },
-    });
-  };
+  const onLogOut = () => {};
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: COLOR_WHITE,
-      }}>
-      <StatusBar />
-      <View style={styles.headerContainer}>
-        <View style={styles.profileInnerContainer}>
-          <LinearGradient
-            colors={['#6c40bd', '#1b97c0', '#01dfcc']}
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 1}}
-            locations={[0, 0.67, 1]}
-            style={{
-              padding: 18,
-              borderRadius: 30,
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <View style={[styles.avatarBox, {backgroundColor: COLOR_BLACK}]}>
-              <Image source={images.ico_people} style={styles.avatar} />
-            </View>
-            <View style={{marginLeft: 12}}>
-              <Text style={[styles.profileName, {color: COLOR_WHITE}]}>
-                REFERIDOS
-              </Text>
-              <Text style={[styles.roleName, {color: COLOR_WHITE}]}>
-                Comparti tu enlace de referidos a quien desees!
-              </Text>
-            </View>
-            <View style={{marginLeft: 12}}>
-              <Text style={[styles.profileName, {color: COLOR_WHITE}]}>+</Text>
-            </View>
-          </LinearGradient>
+    <SafeAreaView style={{flex: 1}}>
+      <LinearGradient
+        colors={['#ffffff', '#d4d3e0']}
+        start={{x: 0.5, y: 0}}
+        end={{x: 0.5, y: 1}}
+        style={{flex: 1}}>
+        <StatusBar />
+        <View style={[styles.headerContainer, {borderBottomColor: '#5f5dc1'}]}>
+          <View style={styles.profileInnerContainer}>
+            <LinearGradient
+              colors={['#6da0ee', '#a755ff']}
+              start={{x: 0, y: 0.5}}
+              end={{x: 1, y: 0.5}}
+              locations={[0, 0.67, 1]}
+              style={{
+                padding: 18,
+                borderRadius: 30,
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <View style={[styles.avatarBox, {backgroundColor: COLOR_BLACK}]}>
+                <Image source={images.ico_people} style={styles.avatar} />
+              </View>
+              <View style={{marginLeft: 12}}>
+                <Text style={[styles.profileName, {color: COLOR_WHITE}]}>
+                  REFERIDOS
+                </Text>
+                <Text style={[styles.roleName, {color: COLOR_WHITE}]}>
+                  Comparti tu enlace de referidos a quien desees!
+                </Text>
+              </View>
+            </LinearGradient>
+          </View>
+          <TouchableOpacity
+            onPress={() => navigation.closeDrawer()}
+            style={[styles.closeIconAndText, {backgroundColor: COLOR_BLACK}]}>
+            <VectorIcon
+              type="AntDesign"
+              name="arrowleft"
+              size={20}
+              color={COLOR_WHITE}
+            />
+          </TouchableOpacity>
         </View>
-        <Pressable
-          onPress={() => navigation.closeDrawer()}
-          style={styles.closeIconAndText}>
+        <ScrollView
+          style={{
+            flexGrow: 1,
+            paddingHorizontal: 30,
+          }}
+          {...scrollPersistTaps}>
+          <Text style={[styles.menuText, {COLOR_BLACK}]}>Home</Text>
+          {menus.map(m => (
+            <SidebarItem
+              key={m.id}
+              id={`sidebar-view-key-${m.id}`}
+              text={m}
+              hasRight
+              containerStyle={styles.menu}
+              onPress={() => onClick(m)}
+              theme={theme}
+            />
+          ))}
+        </ScrollView>
+        <TouchableOpacity onPress={onLogOut} style={[styles.logoutBtn]}>
           <VectorIcon
-            type="AntDesign"
-            name="arrowleft"
-            size={20}
-            color={COLOR_BLACK}
-            style={styles.closeIcon}
+            name={'logout-variant'}
+            type={'MaterialCommunityIcons'}
+            size={24}
+            style={{color: COLOR_BLACK}}
           />
-        </Pressable>
-      </View>
-      <ScrollView
-        style={{
-          flexGrow: 1,
-          backgroundColor: COLOR_WHITE,
-          paddingHorizontal: 16,
-        }}
-        {...scrollPersistTaps}>
-        <Text style={[styles.menuText, {COLOR_BLACK}]}>Home</Text>
-        {menus.map(m => (
-          <SidebarItem
-            key={m.id}
-            id={`sidebar-view-key-${m.id}`}
-            text={m.name}
-            hasRight
-            containerStyle={styles.menu}
-            onPress={() => onClick(m)}
-            theme={theme}
-          />
-        ))}
-      </ScrollView>
-      <TouchableOpacity onPress={onLogOut} style={[styles.logoutBtn]}>
-        <VectorIcon
-          name={'logout-variant'}
-          type={'MaterialCommunityIcons'}
-          size={24}
-          style={{color: COLOR_BLACK}}
-        />
-        <Text style={[styles.logoutText, {color: COLOR_BLACK}]}>
-          {I18n.t('Logout').toUpperCase()}
-        </Text>
-      </TouchableOpacity>
+          <Text style={[styles.logoutText, {color: COLOR_BLACK}]}>
+            {I18n.t('Logout').toUpperCase()}
+          </Text>
+        </TouchableOpacity>
+      </LinearGradient>
     </SafeAreaView>
   );
 };

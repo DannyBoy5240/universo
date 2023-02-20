@@ -18,8 +18,12 @@ const BuyButton = ({name}) => {
   return (
     <TouchableOpacity style={{paddingHorizontal: 8, paddingVertical: 8}}>
       <LinearGradient
-        colors={['#42e8e0', 'rgba(255, 239, 252, 0)']}
-        style={{borderRadius: 29, padding: 1}}>
+        colors={['#42e8e0ff', 'rgba(255, 239, 252, 0)']}
+        style={{
+          borderRadius: 29,
+          paddingVertical: 0.5,
+          paddingHorizontal: 0.5,
+        }}>
         <View style={[styles.btnBox, {backgroundColor: COLOR_BLACK}]}>
           {name === 'Buy Investment' ? (
             <Image source={images.ico_invest} style={styles.btnAvatar} />

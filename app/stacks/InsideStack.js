@@ -6,8 +6,6 @@ import {outsideHeader, themedHeader, StackAnimation} from '../utils/navigation';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SidebarView from '../views/SidebarView';
-import PostsView from '../views/HomeView/posts';
-import RecentView from '../views/HomeView/recent';
 import ProfileEditView from '../views/ProfileEditView';
 import FindFriendView from '../views/FindFriendView';
 import FriendView from '../views/FriendView';
@@ -45,11 +43,6 @@ const HomeStack = () => (
       component={HomeView}
       options={{headerShown: false}}
     />
-    <Inside.Screen
-      name="Posts"
-      component={PostsView}
-      options={{headerShown: false}}
-    />
   </Inside.Navigator>
 );
 
@@ -85,6 +78,26 @@ const TabStack = () => {
         component={DetailsView}
         options={{headerShown: false}}
       />
+      <Tab.Screen
+        name="Notification"
+        component={NotificationView}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Hayek"
+        component={HayekView}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="MyData"
+        component={MyDataView}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="CreatePIN"
+        component={CreatePINView}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 };
@@ -104,32 +117,7 @@ const InsideStack = () => {
         component={TabStack}
         options={{headerShown: false}}
       />
-      <Inside.Screen
-        name="Notification"
-        component={NotificationView}
-        options={{headerShown: false}}
-      />
-      <Inside.Screen
-        name="Hayek"
-        component={HayekView}
-        options={{headerShown: false}}
-      />
-      <Inside.Screen
-        name="MyData"
-        component={MyDataView}
-        options={{headerShown: false}}
-      />
-      <Inside.Screen
-        name="CreatePIN"
-        component={CreatePINView}
-        options={{headerShown: false}}
-      />
 
-      <Inside.Screen
-        name="Recent"
-        component={RecentView}
-        options={RecentView.navigationOptions}
-      />
       <Inside.Screen name="ProfileEdit" component={ProfileEditView} />
       <Inside.Screen
         name="Friend"

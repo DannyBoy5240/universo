@@ -167,7 +167,7 @@ export default StyleSheet.create({
   },
   btnText: {
     fontFamily: 'Montserrat',
-    fontSize: 13,
+    fontSize: 13.5,
     fontWeight: '600',
     lineHeight: 17,
     marginTop: 18,
@@ -206,9 +206,16 @@ export default StyleSheet.create({
   },
 
   cardContainer: {
+    borderRadius: 29,
+    paddingHorizontal: 1,
+    paddingVertical: 1,
+  },
+  cardContainerBorder: {
+    borderRadius: 29,
     marginHorizontal: 28,
     marginVertical: 20,
-    borderRadius: 29,
+    paddingHorizontal: 2,
+    paddingVertical: 2,
   },
   cardBox: {
     height: 139,

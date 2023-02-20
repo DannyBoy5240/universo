@@ -25,9 +25,9 @@ const ProductItem = ({data}) => {
               {data.price}
             </Text>
           </TouchableOpacity>
-          <View style={{height: 173, borderRadius: 29}}>
+          <View style={{height: 190, borderRadius: 29}}>
             <View style={styles.productItemBox}>
-              <Image source={images.test_pic} style={styles.productItem} />
+              <Image source={images.test_product} style={styles.productItem} />
             </View>
           </View>
         </View>
@@ -40,7 +40,9 @@ const ProductItem = ({data}) => {
           </Text>
           <TouchableOpacity style={{alignSelf: 'center'}}>
             <LinearGradient
-              colors={['#8d8be5', '#3c3ca0']}
+              colors={['#614bbe', '#0bc1c7']}
+              start={{x: 0, y: 0.5}}
+              end={{x: 1, y: 0.5}}
               style={styles.productItemBtn}>
               <Text style={[styles.productItemBtnText, {color: COLOR_WHITE}]}>
                 COMPRAR

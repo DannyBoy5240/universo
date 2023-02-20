@@ -19,7 +19,7 @@ const NavButton = ({name}) => {
   return (
     <TouchableOpacity style={{paddingHorizontal: 10, paddingVertical: 10}}>
       <LinearGradient
-        colors={['rgba(246, 246, 246, 0.56)', 'rgba(250, 250, 250, 0)']}
+        colors={['rgba(246, 246, 246, 0.61) 0', 'rgba(250, 250, 250, 0) 1']}
         style={styles.btnBox}>
         <View>
           <Image source={images.add_back} style={styles.btnAvatarBack} />

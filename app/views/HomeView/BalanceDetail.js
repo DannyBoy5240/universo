@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import I18n from '../../i18n';
 import images from '../../assets/images';
-import {COLOR_WHITE, COLOR_ULTRAMARINE} from '../../constants/colors';
 import styles from './styles';
+import {COLOR_WHITE, COLOR_ULTRAMARINE} from '../../constants/colors';
 
 const BalanceDetail = ({}) => {
   return (
@@ -17,11 +19,15 @@ const BalanceDetail = ({}) => {
       </View>
 
       <View style={{borderRadius: 13, alignItems: 'center'}}>
-        <View style={[styles.balancePriceBox, {backgroundColor: COLOR_WHITE}]}>
+        <LinearGradient
+          colors={['#ffffff', '#bebbe5']}
+          start={{x: 0.5, y: 0}}
+          end={{x: 0.5, y: 1}}
+          style={[styles.balancePriceBox, {borderRadius: 13}]}>
           <Text style={[styles.balancePriceText, {color: '#141436'}]}>
             $000.000
           </Text>
-        </View>
+        </LinearGradient>
       </View>
     </View>
   );

@@ -44,7 +44,7 @@ export default StyleSheet.create({
   },
   alertContainer: {
     paddingHorizontal: 30,
-    paddingVertical: 6,
+    marginBottom: 12,
     height: 118,
   },
   closeBtn: {

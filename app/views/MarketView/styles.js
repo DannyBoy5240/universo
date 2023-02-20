@@ -33,7 +33,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   tabBarContainer: {
-    width: '100%',
+    justifyContent: 'center',
     paddingVertical: 26,
   },
   tabContainer: {
@@ -77,14 +77,14 @@ export default StyleSheet.create({
   },
   productItemBox: {
     backgroundColor: '#ebe8fc',
-    height: 173,
+    height: 190,
     borderRadius: 29,
     alignItems: 'center',
     justifyContent: 'center',
   },
   productItem: {
     width: 60,
-    height: 160,
+    height: 170,
   },
   productInfoContainer: {
     paddingLeft: 28,

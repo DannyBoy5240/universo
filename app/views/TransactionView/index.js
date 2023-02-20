@@ -97,7 +97,9 @@ const TransactionView = props => {
               <TouchableOpacity key={i} onPress={() => setIndex(i)}>
                 {i == index ? (
                   <LinearGradient
-                    colors={['#a755ff', '#6da0ee']}
+                    colors={['#6da0ee', '#a755ff']}
+                    start={{x: 0, y: 0.5}}
+                    end={{x: 1, y: 0.5}}
                     style={styles.tabItem}>
                     <Text style={[styles.tabText, {color: COLOR_WHITE}]}>
                       {route.title}
