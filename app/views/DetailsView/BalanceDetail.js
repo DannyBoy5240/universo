@@ -3,10 +3,11 @@ import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import I18n from '../../i18n';
 import images from '../../assets/images';
-import {COLOR_WHITE} from '../../constants/colors';
+import {COLOR_WHITE, COLOR_ULTRAMARINE} from '../../constants/colors';
 import styles from './styles';
 
 import LinearGradient from 'react-native-linear-gradient';
+import RadialGradient from 'react-native-radial-gradient';
 
 const BalanceDetail = ({}) => {
   return (
@@ -23,39 +24,58 @@ const BalanceDetail = ({}) => {
 
       <View style={{paddingHorizontal: 20}}>
         <LinearGradient
-          colors={['rgba(246, 246, 246, 0.46)', '#fafafa']}
-          style={styles.followWrap}>
-          <View
-            style={[
-              styles.optionContainer,
-              {
-                borderRightWidth: 1,
-                borderRightColor: COLOR_WHITE,
-              },
-            ]}>
-            <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
-              BILLING
-            </Text>
-            <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>$000</Text>
-          </View>
-          <View
-            style={[
-              styles.optionContainer,
-              {
-                borderRightWidth: 1,
-                borderRightColor: COLOR_WHITE,
-              },
-            ]}>
-            <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
-              MY SALES
-            </Text>
-            <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>$000</Text>
-          </View>
-          <View style={styles.optionContainer}>
-            <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
-              BALANCE
-            </Text>
-            <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>$000</Text>
+          colors={['#ffffff', 'rgba(255, 255, 255, 0)']}
+          style={{borderRadius: 29, paddingHorizontal: 1, paddingVertical: 1}}>
+          <View style={{backgroundColor: COLOR_ULTRAMARINE, borderRadius: 29}}>
+            <LinearGradient
+              colors={['rgba(246, 246, 246, 0.46)', '#fafafa88']}
+              style={styles.followWrap}>
+              {/* <RadialGradient
+            style={{flex: 1}}
+            colors={['#F00', '#0F0']}
+            stops={[0.1, 0.9]}
+            center={[150, 150]}
+            radius={200}> */}
+              <View
+                style={[
+                  styles.optionContainer,
+                  {
+                    borderRightWidth: 1,
+                    borderRightColor: COLOR_WHITE,
+                  },
+                ]}>
+                <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
+                  BILLING
+                </Text>
+                <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>
+                  $000
+                </Text>
+              </View>
+              <View
+                style={[
+                  styles.optionContainer,
+                  {
+                    borderRightWidth: 1,
+                    borderRightColor: COLOR_WHITE,
+                  },
+                ]}>
+                <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
+                  MY SALES
+                </Text>
+                <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>
+                  $000
+                </Text>
+              </View>
+              <View style={styles.optionContainer}>
+                <Text style={[styles.optionTitle, {color: COLOR_WHITE}]}>
+                  BALANCE
+                </Text>
+                <Text style={[styles.optionValue, {color: COLOR_WHITE}]}>
+                  $000
+                </Text>
+              </View>
+              {/* </RadialGradient> */}
+            </LinearGradient>
           </View>
         </LinearGradient>
       </View>

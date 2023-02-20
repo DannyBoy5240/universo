@@ -155,7 +155,7 @@ const HayekView = ({subProp}) => {
             <View style={styles.summaryBoxMain}>
               <View
                 style={[styles.summaryIconBox, {backgroundColor: COLOR_WHITE}]}>
-                <Image source={images.test_pic} style={styles.summaryIcon} />
+                <Image source={images.ico_invest} style={styles.summaryIcon} />
               </View>
               <View style={{marginLeft: 10}}>
                 <Text
